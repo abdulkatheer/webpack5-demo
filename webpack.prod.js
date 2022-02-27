@@ -8,19 +8,19 @@ module.exports = merge(common, {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    clean: true
+    clean: true,
   },
-  plugins:[
+  plugins: [
     new CssExtractPlugin({
-      filename: "[name]-[contenthash].css"
-    })
+      filename: "[name]-[contenthash].css",
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: [CssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use: [CssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
-    ]
-  }
+    ],
+  },
 });

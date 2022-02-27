@@ -1,30 +1,28 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: 
-  {
+  entry: {
     main: "./src/index.js",
-    vendor: "./src/vendor.js"
+    vendor: "./src/vendor.js",
   },
   output: {
-    assetModuleFilename: 'static/images/[name]-[hash][ext]'
+    assetModuleFilename: "static/images/[name]-[hash][ext]",
   },
   module: {
     rules: [
-      
       {
         test: /\.html$/,
-        use: ["html-loader"]
+        use: ["html-loader"],
       },
       {
         test: /\.(svg|png|jpg|jpeg)$/,
-        type: 'asset/resource'
-      }
-    ]
+        type: "asset/resource",
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/template.html"
-    })
-  ]
+      template: "./src/template.html",
+    }),
+  ],
 };
